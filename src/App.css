@@ -2,52 +2,63 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  }
-  body {
+}
+
+body {
 	font-family: "Segoe UI", Arial, sans-serif;
 	line-height: 1.4;
 	background-color: #fcfcfc;
 	color: #1f1f1f;
-  }
-  h1 {
+}
+
+h1 {
 	font-size: 40px;
 	font-weight: 300;
 	margin-bottom: 27px;
-  }
-  .meme-container {
+}
+
+.meme-container {
 	display: flex;
-  }
-  form {
+}
+
+form {
 	background: #ad1457;
 	text-align: center;
 	padding-top: 20px;
-  }
-  input,
-  button {
+}
+
+input, button {
 	width: 90%;
 	height: 40px;
 	margin-bottom: 5px;
-  }
-  input {
+}
+
+input {
 	padding: 5px 8px;
-  }
-  button {
+}
+
+button {
 	cursor: pointer;
 	text-transform: uppercase;
 	color: #ad1457;
 	font-weight: bold;
-  }
-  .meme {
+}
+
+.meme {
 	position: relative;
-  }
-  .meme > img {
-	width: 500px;
-	height: 402px;
+}
+
+.meme>img {
+	/* width: 500px; */
+	/* height: 402px; */
+	width: 75%;
+	height: auto;
 	background: cover;
 	margin-bottom: -5px;
 	background-repeat: no-repeat;
-  }
-  .meme > h2 {
+}
+
+.meme>h2 {
 	position: absolute;
 	max-width: 36em;
 	font-size: 36px;
@@ -60,28 +71,32 @@
 	text-transform: uppercase;
 	color: white;
 	letter-spacing: 2px;
-	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-	  -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
-	  2px 2px 5px #000;
-  }
-  .meme > .top {
+	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
+}
+
+.meme>.top {
 	top: 0.1em;
-  }
-  .meme > .bottom {
+	cursor: move;
+	position: absolute;
+}
+
+.meme>.bottom {
 	bottom: 0.1em;
-  }
-  
-  /* On screens that are 768px or less */
-  @media screen and (max-width: 768px) {
+	cursor: move;
+	position: absolute;
+}
+
+/* On screens that are 768px or less */
+
+@media screen and (max-width: 768px) {
 	h1 {
-	  font-size: 30px;
-	  margin-bottom: 14px;
+		font-size: 30px;
+		margin-bottom: 14px;
 	}
 	.meme-container {
-	  flex-direction: column;
+		flex-direction: column;
 	}
-	.meme > h2 {
-	  font-size: 30px;
+	.meme>h2 {
+		font-size: 30px;
 	}
-  }
-  
+}

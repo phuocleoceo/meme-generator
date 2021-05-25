@@ -48,12 +48,12 @@ export default function Content(props) {
 					value={bottomText}
 					onChange={handleBottomChange}
 				/>
-				<button>Generate</button>
+				<button>Change Meme</button>
 			</form>
 			<div className="meme">
 				<img src={randomImage} alt="" />
-				<h2 className="top">{topText}</h2>
-				<h2 className="bottom">{bottomText}</h2>
+				<h2 id="dragTop" className="top">{topText}</h2>
+				<h2 id="dragBottom" className="bottom">{bottomText}</h2>
 			</div>
 		</div>
 	)
