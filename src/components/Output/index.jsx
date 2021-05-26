@@ -33,14 +33,8 @@ export default function Output(props) {
 				<img src={randomImage} alt="" />
 
 				{contentText.map((text) => (
-					<Draggable>
-						<div
-							key={text.id}
-							id={text.id}
-							className="content"
-						>
-							{text.value}
-						</div>
+					<Draggable key={text.id}>
+						<div>{text.value}</div>
 					</Draggable>
 				))}
 

@@ -33,6 +33,10 @@ export default function Content(props) {
 		setNewText('');
 	}
 
+	function handleResetContentText() {
+		setContentText([]);
+	}
+
 	function handleChangeMeme(e) {
 		e.preventDefault();
 		const randNum = Math.floor(Math.random() * (allMemeImgs.length - 0) + 0);
@@ -51,6 +55,7 @@ export default function Content(props) {
 					onChange={handleNewText}
 				/>
 				<button type="submit">Add Text</button>
+				<button onClick={handleResetContentText}>Reset Text</button>
 				<button onClick={handleChangeMeme}>Change Meme</button>
 			</form>
 			<Output contentText={contentText} randomImage={randomImage} />
