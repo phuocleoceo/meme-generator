@@ -32,14 +32,14 @@ export default function Output(props) {
 				<img src={randomImage} alt="" />
 
 				{contentText.map((text) => (
-					<h2
+					<div
 						key={text.id}
-						className="content"
 						id={text.id}
-						onMouseEnter={() => draggable(text.id)}
+						onMouseDown={() => draggable(text.id)}
+						className="content"
 					>
 						{text.value}
-					</h2>
+					</div>
 				))}
 			</div>
 

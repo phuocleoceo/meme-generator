@@ -1,17 +1,15 @@
 var dragObj = null;
 function draggable(id) {
-	var obj = document.getElementById(id);
+	let obj = document.getElementById(id);
 	obj.style.position = "absolute";
 	obj.onmousedown = () => dragObj = obj;
 }
 
-document.onmouseup = function (e) {
-	dragObj = null;
-};
+document.onmouseup = (e) => dragObj = null;
 
-document.onmousemove = function (e) {
-	var x = e.pageX;
-	var y = e.pageY;
+document.onmousemove = (e) => {
+	let x = e.pageX;
+	let y = e.pageY;
 
 	if (dragObj == null)
 		return;

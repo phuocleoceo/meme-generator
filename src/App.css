@@ -49,8 +49,6 @@ button {
 }
 
 .meme>img {
-	/* width: 500px; */
-	/* height: 402px; */
 	width: 75%;
 	height: auto;
 	background: cover;
@@ -58,7 +56,7 @@ button {
 	background-repeat: no-repeat;
 }
 
-.meme>h2 {
+.meme>div {
 	position: absolute;
 	max-width: 36em;
 	font-size: 36px;
@@ -91,6 +89,6 @@ button {
 		flex-direction: column;
 	}
 	.meme>h2 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 }
