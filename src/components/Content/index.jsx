@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Output from '../Output';
 
 export default function Content(props) {
-	const [topText, setTopText] = useState('');
-	const [bottomText, setBottomText] = useState('');
+	const [newText, setNewText] = useState('');
+	const [contentText, setContentText] = useState([]);
 	const [randomImage, setRandomImage] = useState('https://i.imgflip.com/43a45p.png');
 	const [allMemeImgs, setAllMemeImgs] = useState([]);
 
@@ -17,15 +17,23 @@ export default function Content(props) {
 		fetchImage();
 	}, [])
 
-	function handleTopChange(e) {
-		setTopText(e.target.value);
+	function handleNewText(e) {
+		setNewText(e.target.value);
 	}
 
-	function handleBottomChange(e) {
-		setBottomText(e.target.value);
+	function handleAddNewText(e) {
+		e.preventDefault();
+		const newContentTextItem = {
+			id: contentText.length + 1,
+			value: newText
+		};
+		const newContentText = [...contentText];
+		newContentText.push(newContentTextItem);
+		setContentText(newContentText);
+		setNewText('');
 	}
 
-	function handleSubmit(e) {
+	function handleChangeMeme(e) {
 		e.preventDefault();
 		const randNum = Math.floor(Math.random() * (allMemeImgs.length - 0) + 0);
 		const randMemeImgUrl = allMemeImgs[randNum].url;
@@ -34,24 +42,18 @@ export default function Content(props) {
 
 	return (
 		<div className="meme-container">
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleAddNewText}>
 				<input
 					type="text"
-					name="topText"
-					placeholder="Add Top Text"
-					value={topText}
-					onChange={handleTopChange}
+					name="contentText"
+					placeholder="Type text here..."
+					value={newText}
+					onChange={handleNewText}
 				/>
-				<input
-					type="text"
-					name="bottomText"
-					placeholder="Add Bottom Text"
-					value={bottomText}
-					onChange={handleBottomChange}
-				/>
-				<button type="submit">Change Meme</button>
+				<button type="submit">Add Text</button>
+				<button onClick={handleChangeMeme}>Change Meme</button>
 			</form>
-			<Output topText={topText} bottomText={bottomText} randomImage={randomImage} />
+			<Output contentText={contentText} randomImage={randomImage} />
 		</div>
 	)
 }

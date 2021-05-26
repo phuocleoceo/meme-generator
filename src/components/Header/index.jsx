@@ -10,8 +10,7 @@ export default function Header() {
 
 	return (
 		<header>
-			<h2>{dt}</h2>
-			<h1>Meme Generator</h1>
+			<h1>Meme Generator {dt}</h1>
 		</header>
 	)
 }

@@ -74,14 +74,8 @@ button {
 	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
 }
 
-.meme>.top {
+.meme>.content {
 	top: 0.1em;
-	cursor: move;
-	position: absolute;
-}
-
-.meme>.bottom {
-	bottom: 0.1em;
 	cursor: move;
 	position: absolute;
 }

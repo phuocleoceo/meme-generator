@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react'
 import * as htmlToImage from 'html-to-image';
+import { draggable } from './draggable';
 
 export default function Output(props) {
-	const { topText, bottomText, randomImage } = props;
+	const { contentText, randomImage } = props;
 
 	const handleSave = useCallback(
 		() => {
@@ -29,8 +30,17 @@ export default function Output(props) {
 		<div>
 			<div className="meme">
 				<img src={randomImage} alt="" />
-				<h2 id="dragTop" className="top">{topText}</h2>
-				<h2 id="dragBottom" className="bottom">{bottomText}</h2>
+
+				{contentText.map((text) => (
+					<h2
+						key={text.id}
+						className="content"
+						id={text.id}
+						onClick={() => draggable(text.id)}
+					>
+						{text.value}
+					</h2>
+				))}
 			</div>
 
 			<button onClick={handleSave}>Save</button>
