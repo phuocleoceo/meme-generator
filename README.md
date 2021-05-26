@@ -1,6 +1,6 @@
 ## Meme-generator 
 
-![Alt text](https://raw.githubusercontent.com/phuocleoceo/meme-generator/blob/master/Capture.JPG?raw=true)
+![Alt text](https://raw.githubusercontent.com/phuocleoceo/meme-generator/master/Capture.JPG?raw=true)
 
 ## npm package
 
