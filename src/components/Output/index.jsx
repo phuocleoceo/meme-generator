@@ -1,12 +1,13 @@
 import React, { useCallback, useRef } from 'react'
 import * as htmlToImage from 'html-to-image';
 import Draggable from 'react-draggable';
+import download from 'downloadjs';
 
 export default function Output(props) {
 	const { contentText, randomImage } = props;
 	const memeFrame = useRef(null);
 
-	const handleSave = useCallback(
+	const handleOpenInNewTab = useCallback(
 		() => {
 			async function SaveImage() {
 				try {
@@ -21,10 +22,25 @@ export default function Output(props) {
 					}, 100);
 				}
 				catch {
-					console.log("Error when save image !");
+					alert("Error when handling image !");
 				}
 			};
 			SaveImage();
+		}, []);
+
+	const handleDownLoad = useCallback(
+		() => {
+			async function DownloadImage() {
+				try {
+					const node = memeFrame.current;
+					const getImgUrl = await htmlToImage.toPng(node);
+					await download(getImgUrl, "my-meme.png", "image/png");
+				}
+				catch {
+					alert("Error when handling image !");
+				}
+			};
+			DownloadImage();
 		}, []);
 
 	return (
@@ -40,7 +56,8 @@ export default function Output(props) {
 
 			</div>
 
-			<button onClick={handleSave}>Save</button>
+			<button onClick={handleOpenInNewTab}>Open In New Tab</button>
+			<button onClick={handleDownLoad}>Download</button>
 		</div>
 	)
 }
