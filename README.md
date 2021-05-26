@@ -7,3 +7,5 @@
 html-to-image
 
 react-draggable
+
+downloadjs
