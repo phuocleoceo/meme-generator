@@ -33,7 +33,7 @@ export default function Content(props) {
 		setNewText('');
 	}
 
-	function handleResetContentText() {
+	function handleClearContentText() {
 		setContentText([]);
 	}
 
@@ -55,7 +55,7 @@ export default function Content(props) {
 					onChange={handleNewText}
 				/>
 				<button type="submit">Add Text</button>
-				<button onClick={handleResetContentText}>Reset Text</button>
+				<button onClick={handleClearContentText}>Clear Text</button>
 				<button onClick={handleChangeMeme}>Change Meme</button>
 			</form>
 			<Output contentText={contentText} randomImage={randomImage} />
