@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Output from '../Output';
 
 export default function Content(props) {
 	const [topText, setTopText] = useState('');
@@ -48,13 +49,9 @@ export default function Content(props) {
 					value={bottomText}
 					onChange={handleBottomChange}
 				/>
-				<button>Change Meme</button>
+				<button type="submit">Change Meme</button>
 			</form>
-			<div className="meme">
-				<img src={randomImage} alt="" />
-				<h2 id="dragTop" className="top">{topText}</h2>
-				<h2 id="dragBottom" className="bottom">{bottomText}</h2>
-			</div>
+			<Output topText={topText} bottomText={bottomText} randomImage={randomImage} />
 		</div>
 	)
 }
