@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react'
 import * as htmlToImage from 'html-to-image';
-import { draggable } from './draggable';
+import Draggable from 'react-draggable';
 
 export default function Output(props) {
 	const { contentText, randomImage } = props;
@@ -33,15 +33,17 @@ export default function Output(props) {
 				<img src={randomImage} alt="" />
 
 				{contentText.map((text) => (
-					<div
-						key={text.id}
-						id={text.id}
-						onMouseDown={() => draggable(text.id)}
-						className="content"
-					>
-						{text.value}
-					</div>
+					<Draggable>
+						<div
+							key={text.id}
+							id={text.id}
+							className="content"
+						>
+							{text.value}
+						</div>
+					</Draggable>
 				))}
+
 			</div>
 
 			<button onClick={handleSave}>Save</button>
