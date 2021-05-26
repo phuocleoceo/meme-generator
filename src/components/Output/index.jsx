@@ -17,7 +17,7 @@ export default function Output(props) {
 					const w = window.open("about:blank");
 					setTimeout(() => {
 						w.document.write(img.outerHTML);
-					}, 0);
+					}, 100);
 				}
 				catch {
 					console.log("Error when save image !");
@@ -36,7 +36,7 @@ export default function Output(props) {
 						key={text.id}
 						className="content"
 						id={text.id}
-						onClick={() => draggable(text.id)}
+						onMouseEnter={() => draggable(text.id)}
 					>
 						{text.value}
 					</h2>
