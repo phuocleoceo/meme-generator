@@ -1,15 +1,16 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useRef } from 'react'
 import * as htmlToImage from 'html-to-image';
 import { draggable } from './draggable';
 
 export default function Output(props) {
 	const { contentText, randomImage } = props;
+	const memeFrame = useRef(null);
 
 	const handleSave = useCallback(
 		() => {
 			async function SaveImage() {
 				try {
-					const node = document.querySelector('.meme');
+					const node = memeFrame.current;
 					const getImgUrl = await htmlToImage.toPng(node);
 
 					const img = new Image();
@@ -28,7 +29,7 @@ export default function Output(props) {
 
 	return (
 		<div>
-			<div className="meme">
+			<div className="meme" ref={memeFrame}>
 				<img src={randomImage} alt="" />
 
 				{contentText.map((text) => (
