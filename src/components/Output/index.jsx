@@ -16,7 +16,7 @@ export default function Output(props) {
 
 					const img = new Image();
 					img.src = getImgUrl;
-					const w = window.open("about:blank");
+					const w = window.open("", "_blank");
 					setTimeout(() => {
 						w.document.write(img.outerHTML);
 					}, 100);

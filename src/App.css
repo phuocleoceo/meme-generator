@@ -59,7 +59,7 @@ button {
 .meme>div {
 	position: absolute;
 	max-width: 35em;
-	font-size: 35px;
+	font-size: 30px;
 	text-align: center;
 	left: 49%;
 	transform: translateX(-50%);
@@ -67,9 +67,9 @@ button {
 	padding: 0;
 	font-family: Arial, impact, sans-serif;
 	text-transform: uppercase;
-	color: white;
+	color: black;
 	letter-spacing: 2px;
-	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
+	text-shadow: 1px 1px;
 	top: 0.1em;
 	cursor: move;
 	position: absolute;
