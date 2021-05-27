@@ -11,10 +11,9 @@ body {
 	color: #1f1f1f;
 }
 
-h1 {
-	font-size: 40px;
+h2 {
+	font-size: 30px;
 	font-weight: 300;
-	margin-bottom: 27px;
 }
 
 .meme-container {
