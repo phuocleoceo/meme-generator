@@ -67,12 +67,11 @@ button {
 	padding: 0;
 	font-family: Arial, impact, sans-serif;
 	text-transform: uppercase;
-	color: black;
+	color: white;
 	letter-spacing: 2px;
-	text-shadow: 1px 1px;
+	text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
 	top: 0.1em;
 	cursor: move;
-	position: absolute;
 }
 
 /* On screens that are 768px or less */
@@ -85,7 +84,10 @@ button {
 	.meme-container {
 		flex-direction: column;
 	}
-	.meme>h2 {
+	.meme>div {
+		position: absolute;
+		color: black;
 		font-size: 25px;
+		text-shadow: 1px 1px;
 	}
 }
